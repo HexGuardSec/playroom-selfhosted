@@ -2,6 +2,23 @@
 
 All notable changes to Playroom are listed here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [2.0.1] - 2026-11-16
+
+### Added
+- **Online demo** on GitHub Pages, rebuilt every week: https://hexguardsec.github.io/playroom-selfhosted/
+- Animated tour and screenshots in the README.
+- Multi-arch Docker image (amd64, arm64) published to `ghcr.io/hexguardsec/playroom-selfhosted`.
+
+### Fixed
+- Xbox: PC games that the Xbox Game Bar records (Steam, Epic, Riot...) no longer show up as Xbox games. A title now needs a console play, Xbox achievements or Gamerscore.
+- Xbox: OpenXBL answers wrapped in `content` are read correctly; an unexpected answer now shows an error instead of an empty library.
+- PlayStation: the profile name and avatar fall back to the older profile service, and failures are logged.
+- Small phones: the top bar no longer pushes the language picker off screen.
+- Nintendo games in the demo now have their covers.
+
+### Security
+- API errors send fixed messages instead of exception text (CodeQL `js/xss-through-exception`).
+
 ## [2.0.0] - 2026-11-16
 
 First public release.
