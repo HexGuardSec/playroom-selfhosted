@@ -8,7 +8,7 @@ Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès,
 
 **[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [English](README.md)
 
-[![Accueil de Playroom](docs/screenshots/home.jpg)](https://hexguardsec.github.io/playroom-selfhosted/)
+[![Visite de Playroom : accueil, fiche de jeu, bibliothèque, activité, pile de la honte, classement](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
 </div>
 

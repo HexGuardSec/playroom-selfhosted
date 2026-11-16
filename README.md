@@ -14,7 +14,7 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 
 **[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · [Français](README_fr.md)
 
-[![Playroom home page](docs/screenshots/home.jpg)](https://hexguardsec.github.io/playroom-selfhosted/)
+[![Tour of Playroom: home, game page, library, activity, pile of shame, ratings](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
 </div>
 
