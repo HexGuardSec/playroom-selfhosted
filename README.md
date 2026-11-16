@@ -14,6 +14,8 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 
 [Français](README_fr.md)
 
+![Playroom home page](docs/screenshots/home.jpg)
+
 </div>
 
 ## Features
@@ -29,6 +31,10 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 - **15 languages**: English, French, Spanish, German, Italian, Portuguese (Brazil), Dutch, Polish, Russian, Turkish, Arabic, Japanese, Korean, Simplified and Traditional Chinese.
 - **Your account, your rules**: sign in with a password, and choose whether visitors can see your collection.
 - **Light and self-contained**: Node.js only, zero npm dependencies, one Docker container.
+
+| Game page | Activity | Phone |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/game.jpg" alt="Game page" width="380"> | <img src="docs/screenshots/activity.jpg" alt="Activity calendar" width="380"> | <img src="docs/screenshots/mobile.jpg" alt="Phone" width="170"> |
 
 ## Quick start
 
@@ -53,7 +59,7 @@ Open `http://YOUR-SERVER:8080`. The setup page asks for:
 
 Your first sync starts right away.
 
-![Setup](docs/screenshots/setup.png)
+![Setup](docs/screenshots/setup.jpg)
 
 ### Just looking?
 

@@ -8,6 +8,8 @@ Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès,
 
 [English](README.md)
 
+![Accueil de Playroom](docs/screenshots/home.jpg)
+
 </div>
 
 ## Fonctionnalités
@@ -23,6 +25,10 @@ Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès,
 - **15 langues**, anglais par défaut.
 - **Ton compte, tes règles** : connexion par mot de passe, et tu choisis si les visiteurs peuvent voir ta collection.
 - **Léger et autonome** : Node.js seulement, aucune dépendance npm, un seul conteneur Docker.
+
+| Fiche d'un jeu | Activité | Téléphone |
+|:---:|:---:|:---:|
+| <img src="docs/screenshots/game.jpg" alt="Fiche d'un jeu" width="380"> | <img src="docs/screenshots/activity.jpg" alt="Calendrier d'activité" width="380"> | <img src="docs/screenshots/mobile.jpg" alt="Téléphone" width="170"> |
 
 ## Démarrage rapide
 
