@@ -6,7 +6,7 @@ if [ "$(id -u)" -ne 0 ]; then echo "Run this script as root (sudo)."; exit 1; fi
 SRC="$(cd "$(dirname "$0")/.." && pwd)"
 DEST=/opt/playroom
 
-if ! command -v node >/dev/null || [ "$(node -p 'process.versions.node.split(".")[0]')" -lt 20 ]; then
+if ! command -v node >/dev/null || [ "$(node -p 'process.versions.node.split(".")[0]')" -lt 22 ]; then
   echo "> Installing Node.js 22"
   apt-get update && apt-get install -y curl ca-certificates
   curl -fsSL https://deb.nodesource.com/setup_22.x | bash -

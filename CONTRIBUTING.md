@@ -10,7 +10,7 @@ Thanks for your interest! Bug reports, translations and pull requests are all we
 
 ## Local setup
 
-You only need Node.js 20 or newer. There is nothing to install.
+You only need Node.js 22 or newer. There is nothing to install.
 
 ```bash
 git clone https://github.com/HexGuardSec/playroom-selfhosted.git

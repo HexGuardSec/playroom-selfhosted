@@ -8,7 +8,7 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 
 [![CI](https://github.com/HexGuardSec/playroom-selfhosted/actions/workflows/ci.yml/badge.svg)](https://github.com/HexGuardSec/playroom-selfhosted/actions/workflows/ci.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
-![Node.js 20+](https://img.shields.io/badge/node-%E2%89%A520-339933)
+![Node.js 22+](https://img.shields.io/badge/node-%E2%89%A522-339933)
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 
 [Français](README_fr.md)
@@ -61,7 +61,7 @@ This starts a read-only fake collection on `http://localhost:8080`, with nothing
 
 ### Without Docker
 
-Requires Node.js 20 or newer, on Debian or Ubuntu:
+Requires Node.js 22 or newer, on Debian or Ubuntu:
 
 ```bash
 sudo ./deploy/install.sh            # installs Node 22, copies to /opt/playroom, creates a systemd service

@@ -46,7 +46,7 @@ La première synchro démarre aussitôt.
 
 Pour juste regarder : `DEMO=true node server.js` lance une collection fictive en lecture seule, sans rien configurer.
 
-Sans Docker, Node.js 20 ou plus suffit. Sur Debian ou Ubuntu : `sudo ./deploy/install.sh`, puis `journalctl -u playroom | grep -i "setup code"`.
+Sans Docker, Node.js 22 ou plus suffit. Sur Debian ou Ubuntu : `sudo ./deploy/install.sh`, puis `journalctl -u playroom | grep -i "setup code"`.
 
 ## Obtenir les clés
 
