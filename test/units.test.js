@@ -109,7 +109,7 @@ test('Xbox: an unexpected OpenXBL response is an error, not an empty library', a
     globalThis.fetch = reply(() => ({ error_message: 'Invalid API key' }));
     await assert.rejects(syncXbox({ openxblKey: 'k', playtimeMaxTitles: 0 }), /Unexpected OpenXBL response \(Invalid API key\)/);
 
-    const title = { titleId: '1', name: 'Sea of Thieves', type: 'Game', devices: ['PC'], achievement: {}, titleHistory: {} };
+    const title = { titleId: '1', name: 'Sea of Thieves', type: 'Game', devices: ['PC'], achievement: { totalGamerscore: 5000 }, titleHistory: {} };
     globalThis.fetch = reply((p) =>
       p.endsWith('/account')
         ? { content: { profileUsers: [{ settings: [{ id: 'Gamertag', value: 'Tester' }] }] } }
@@ -122,4 +122,12 @@ test('Xbox: an unexpected OpenXBL response is an error, not an empty library', a
   } finally {
     globalThis.fetch = realFetch;
   }
+});
+
+test('Xbox: PC games seen by the Game Bar without Xbox achievements are skipped', async () => {
+  const { isXboxGame } = await import('../src/connectors/xbox.js');
+  assert.equal(isXboxGame({ devices: ['PC'], achievement: { totalGamerscore: 0, totalAchievements: 0 } }), false);
+  assert.equal(isXboxGame({ devices: ['PC'], achievement: { totalGamerscore: 1000, currentAchievements: 3 } }), true);
+  assert.equal(isXboxGame({ devices: ['XboxSeries'], achievement: {} }), true);
+  assert.equal(isXboxGame({ devices: ['Mobile'], achievement: { currentAchievements: 6 } }), true);
 });

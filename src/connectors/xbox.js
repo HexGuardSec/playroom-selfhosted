@@ -13,6 +13,19 @@ function describe(data) {
   return keys ? ` (fields: ${keys})` : ' (empty)';
 }
 
+const CONSOLES = ['XboxSeries', 'XboxOne', 'Xbox360'];
+/**
+ * Real Xbox games only. On Windows, the Xbox Game Bar also records every PC game
+ * it sees (Steam, Epic...), with no Xbox achievements: those would duplicate the
+ * other platforms. A title counts if it was played on a console or has Xbox
+ * achievements or Gamerscore.
+ */
+export function isXboxGame(t) {
+  const a = t.achievement || {};
+  if ((t.devices || []).some((d) => CONSOLES.includes(d))) return true;
+  return (a.totalGamerscore || 0) > 0 || (a.totalAchievements || 0) > 0 || (a.currentAchievements || 0) > 0;
+}
+
 /** Recursively finds the MinutesPlayed stat in the response */
 function findMinutesPlayed(obj) {
   if (!obj || typeof obj !== 'object') return null;
@@ -38,8 +51,9 @@ export async function syncXbox({ openxblKey, playtimeMaxTitles }, previousGames 
   // OpenXBL sometimes wraps its payload in "content"; anything else is an error we must show
   const list = Array.isArray(history?.titles) ? history.titles : Array.isArray(history?.content?.titles) ? history.content.titles : null;
   if (!list) throw new Error(`Unexpected OpenXBL response${describe(history)}. Check the OpenXBL key in Settings.`);
-  const titles = list.filter((t) => t.type !== 'App');
-  log('xbox', `${titles.length} games found`);
+  const titles = list.filter((t) => t.type !== 'App' && isXboxGame(t));
+  const skipped = list.length - titles.length;
+  log('xbox', `${titles.length} games found${skipped ? ` (${skipped} apps or PC games without Xbox achievements skipped)` : ''}`);
 
   // Reuse the known playtime when the game has not been played since (saves quota)
   const prev = new Map(previousGames.map((g) => [g.id, g]));
