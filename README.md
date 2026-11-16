@@ -12,9 +12,9 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 [![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
 
-[Français](README_fr.md)
+**[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · [Français](README_fr.md)
 
-![Playroom home page](docs/screenshots/home.jpg)
+[![Playroom home page](docs/screenshots/home.jpg)](https://hexguardsec.github.io/playroom-selfhosted/)
 
 </div>
 

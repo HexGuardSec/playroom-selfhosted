@@ -1,0 +1,43 @@
+name: Online demo
+
+# Publishes the demo collection (DEMO=true) as a static site on GitHub Pages.
+# Rebuilt every week so the "last played" dates and the activity stay recent.
+on:
+  push:
+    branches: [main]
+    paths: ['public/**', 'src/**', 'server.js', 'scripts/build-demo.js', '.github/workflows/pages.yml']
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node scripts/build-demo.js dist
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

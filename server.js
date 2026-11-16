@@ -186,6 +186,8 @@ function serveStatic(req, res, pathname) {
   if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) {
     // Unknown path: serve the app (hash-based routing), except for a missing file
     if (path.extname(rel)) return send(res, 404, 'Not found');
+    // The page uses relative URLs: any other path goes back to the root
+    if (pathname !== '/') return send(res, 302, '', { Location: '/' });
     file = path.join(PUBLIC, 'index.html');
   }
   const ext = path.extname(file);

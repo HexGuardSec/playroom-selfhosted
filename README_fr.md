@@ -6,9 +6,9 @@
 
 Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès, calendrier d'activité et la pile des jeux jamais commencés.
 
-[English](README.md)
+**[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [English](README.md)
 
-![Accueil de Playroom](docs/screenshots/home.jpg)
+[![Accueil de Playroom](docs/screenshots/home.jpg)](https://hexguardsec.github.io/playroom-selfhosted/)
 
 </div>
 

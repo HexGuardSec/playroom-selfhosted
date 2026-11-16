@@ -891,7 +891,7 @@ async function searchCovers(g) {
   state.pick.results = null;
   state.pick.error = null;
   try {
-    state.pick.results = (await api('GET', `/api/covers?q=${encodeURIComponent(state.pick.q)}&system=${encodeURIComponent(g.system || '')}`)).results;
+    state.pick.results = (await api('GET', `api/covers?q=${encodeURIComponent(state.pick.q)}&system=${encodeURIComponent(g.system || '')}`)).results;
   } catch (e) {
     state.pick.results = [];
     state.pick.error = e.message;
@@ -978,7 +978,7 @@ function drawNintendoForm() {
     f.error = null;
     drawNintendoForm();
     try {
-      f.results = (await api('GET', `/api/covers?q=${encodeURIComponent(f.title)}&system=${encodeURIComponent(f.system)}`)).results;
+      f.results = (await api('GET', `api/covers?q=${encodeURIComponent(f.title)}&system=${encodeURIComponent(f.system)}`)).results;
     } catch (e) {
       f.results = [];
       f.error = e.message;
@@ -1027,7 +1027,7 @@ function drawNintendoForm() {
 }
 
 async function ninRequest(method, id, body) {
-  return api(method, `/api/nintendo${id ? `/${encodeURIComponent(id)}` : ''}`, body);
+  return api(method, `api/nintendo${id ? `/${encodeURIComponent(id)}` : ''}`, body);
 }
 
 /** Hides a game (or shows it again): it disappears from every page and total */
@@ -1056,7 +1056,7 @@ async function chooseCover(g, r) {
 }
 
 async function saveNote(id, body) {
-  return (await api('PUT', `/api/notes/${encodeURIComponent(id)}`, body)).note;
+  return (await api('PUT', `api/notes/${encodeURIComponent(id)}`, body)).note;
 }
 
 $('#gpClose').addEventListener('click', () => $('#gamepage').close());
@@ -1243,7 +1243,7 @@ function bindLogin(form, onDone) {
     const btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
     try {
-      await api('POST', '/api/login', { username: form.elements.username.value, password: form.elements.password.value });
+      await api('POST', 'api/login', { username: form.elements.username.value, password: form.elements.password.value });
       onDone();
     } catch (ex) {
       err.hidden = false;
@@ -1351,7 +1351,7 @@ function renderSetup() {
       return renderSetup();
     }
     try {
-      await api('POST', '/api/setup', {
+      await api('POST', 'api/setup', {
         code: v.code, username: v.username, password: v.password,
         settings: { ...(v.keys || {}), museumName: v.museumName || 'Playroom', visibility: v.visibility },
       });
@@ -1381,7 +1381,7 @@ async function renderSettings() {
   }
   let cur;
   try {
-    cur = await api('GET', '/api/settings');
+    cur = await api('GET', 'api/settings');
   } catch (e) {
     app.innerHTML = `<div class="wrap"><div class="empty"><strong>${esc(e.message)}</strong></div></div>`;
     return;
@@ -1426,8 +1426,8 @@ async function renderSettings() {
     err.hidden = ok.hidden = true;
     form.querySelectorAll('.is-invalid').forEach((x) => x.classList.remove('is-invalid'));
     try {
-      await api('PUT', '/api/settings', { ...readKeyFields(form), museumName: form.elements.museumName.value, visibility: form.elements.visibility.value });
-      await api('POST', '/api/sync').catch(() => {});
+      await api('PUT', 'api/settings', { ...readKeyFields(form), museumName: form.elements.museumName.value, visibility: form.elements.visibility.value });
+      await api('POST', 'api/sync').catch(() => {});
       ok.hidden = false;
       ok.textContent = t('set.saved');
       renderSettings().then(() => {
@@ -1451,7 +1451,7 @@ async function renderSettings() {
     }
   });
   $('#widgetNew').addEventListener('click', async () => {
-    const { widgetKey } = await api('POST', '/api/settings/widget-key');
+    const { widgetKey } = await api('POST', 'api/settings/widget-key');
     $('#widgetUrl').value = widgetUrl(widgetKey);
   });
   const pf = $('#passForm');
@@ -1461,7 +1461,7 @@ async function renderSettings() {
     const ok = pf.querySelector('.form-ok');
     err.hidden = ok.hidden = true;
     try {
-      await api('PUT', '/api/password', { current: pf.elements.current.value, next: pf.elements.next.value });
+      await api('PUT', 'api/password', { current: pf.elements.current.value, next: pf.elements.next.value });
       pf.reset();
       ok.hidden = false;
       ok.textContent = t('set.passChanged');
@@ -1471,7 +1471,7 @@ async function renderSettings() {
     }
   });
   $('#signOut').addEventListener('click', async () => {
-    await api('POST', '/api/logout').catch(() => {});
+    await api('POST', 'api/logout').catch(() => {});
     location.hash = '#/';
     load();
   });
@@ -1512,12 +1512,12 @@ async function getJson(url) {
 
 async function load() {
   try {
-    state.me = (await getJson('/api/me')).data;
+    state.me = (await getJson('api/me')).data;
     if (state.me.setup) return renderSetup();
     const [{ status, data }, act, pres] = await Promise.all([
-      getJson('/api/library'),
-      getJson('/api/activity').catch(() => ({ data: null })),
-      getJson('/api/presence').catch(() => ({ data: null })),
+      getJson('api/library'),
+      getJson('api/activity').catch(() => ({ data: null })),
+      getJson('api/presence').catch(() => ({ data: null })),
     ]);
     if (status === 401) return renderLoginPage();
     if (status === 503) {
@@ -1540,7 +1540,7 @@ setInterval(async () => {
   if (!state.lib) return;
   const before = JSON.stringify(nowPlaying());
   try {
-    state.presence = (await getJson('/api/presence')).data;
+    state.presence = (await getJson('api/presence')).data;
   } catch {
     return;
   }
@@ -1557,14 +1557,14 @@ $('#live').addEventListener('click', () => {
 $('#syncBtn').addEventListener('click', async () => {
   const btn = $('#syncBtn');
   try {
-    await api('POST', '/api/sync');
+    await api('POST', 'api/sync');
   } catch (e) {
     return alert(e.message);
   }
   btn.disabled = true;
   btn.textContent = t('syncing');
   const poll = setInterval(async () => {
-    const s = await fetch('/api/status').then((r) => r.json()).catch(() => null);
+    const s = await fetch('api/status').then((r) => r.json()).catch(() => null);
     if (s && !s.syncing) {
       clearInterval(poll);
       btn.disabled = false;
