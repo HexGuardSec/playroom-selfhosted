@@ -358,8 +358,8 @@ async function handle(req, res) {
       if (!validGameId(id)) return fail(res, 400, 'invalid', 'Invalid game id');
       try {
         return json(res, 200, { note: saveNote(id, await readBody(req)) });
-      } catch (e) {
-        return fail(res, 400, 'invalid', e.message);
+      } catch {
+        return fail(res, 400, 'invalid', 'Invalid note');
       }
     }
 
@@ -376,7 +376,9 @@ async function handle(req, res) {
         await refreshNintendo();
         return json(res, 200, { id });
       } catch (e) {
-        return fail(res, 400, /already exists/.test(e.message) ? 'exists' : 'invalid', e.message);
+        return /already exists/.test(e.message)
+          ? fail(res, 400, 'exists', 'A game with this title already exists')
+          : fail(res, 400, 'invalid', 'Invalid game');
       }
     }
 
@@ -389,7 +391,7 @@ async function handle(req, res) {
 
 const server = http.createServer((req, res) => {
   handle(req, res).catch((e) => {
-    if (e instanceof BadRequest) return fail(res, 400, 'invalid', e.message);
+    if (e instanceof BadRequest) return fail(res, 400, 'invalid', 'Invalid request');
     log('http', e);
     if (!res.headersSent) fail(res, 500, 'server', 'Internal error');
   });
