@@ -97,3 +97,29 @@ test('Nintendo: add, duplicate, unknown console, delete', () => {
   assert.equal(nintendo.syncNintendo(dir).games.some((g) => g.id === id), false);
   assert.equal(normTitle('Overwatch® 2'), 'overwatch 2');
 });
+
+test('Xbox: an unexpected OpenXBL response is an error, not an empty library', async () => {
+  const { syncXbox } = await import('../src/connectors/xbox.js');
+  const realFetch = globalThis.fetch;
+  const reply = (byPath) => async (url) => {
+    const body = byPath(new URL(url).pathname);
+    return new Response(JSON.stringify(body), { status: 200, headers: { 'content-type': 'application/json' } });
+  };
+  try {
+    globalThis.fetch = reply(() => ({ error_message: 'Invalid API key' }));
+    await assert.rejects(syncXbox({ openxblKey: 'k', playtimeMaxTitles: 0 }), /Unexpected OpenXBL response \(Invalid API key\)/);
+
+    const title = { titleId: '1', name: 'Sea of Thieves', type: 'Game', devices: ['PC'], achievement: {}, titleHistory: {} };
+    globalThis.fetch = reply((p) =>
+      p.endsWith('/account')
+        ? { content: { profileUsers: [{ settings: [{ id: 'Gamertag', value: 'Tester' }] }] } }
+        : { content: { titles: [title, { ...title, titleId: '2', type: 'App' }] } }
+    );
+    const res = await syncXbox({ openxblKey: 'k', playtimeMaxTitles: 0 });
+    assert.equal(res.games.length, 1);
+    assert.equal(res.games[0].title, 'Sea of Thieves');
+    assert.equal(res.profile.name, 'Tester');
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+});

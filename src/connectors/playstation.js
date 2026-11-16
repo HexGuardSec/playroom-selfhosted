@@ -73,12 +73,36 @@ function pickCover(t) {
   return byType('PORTRAIT_BANNER') || byType('MASTER') || byType('GAMEHUB_COVER_ART') || t.imageUrl || null;
 }
 
+/** Online ID and avatar: the mobile app endpoint first, then the older profile service */
+async function getProfile(auth) {
+  try {
+    const p = await fetchJson(`${API}/userProfile/v1/internal/users/me/profiles`, { headers: auth }, { retries: 1 });
+    const avatar = p?.avatars?.find((a) => a.size === 'xl')?.url || p?.avatars?.at(-1)?.url || null;
+    if (p?.onlineId) return { onlineId: p.onlineId, avatar };
+  } catch (e) {
+    log('psn', `Profile (mobile API) unavailable: ${e.message}`);
+  }
+  try {
+    const d = await fetchJson(
+      'https://us-prof.np.community.playstation.net/userProfile/v1/users/me/profile2?fields=onlineId,avatarUrls',
+      { headers: auth },
+      { retries: 1 }
+    );
+    const urls = d?.profile?.avatarUrls ?? [];
+    const avatar = urls.find((a) => a.size === 'xl')?.avatarUrl || urls.at(-1)?.avatarUrl || null;
+    if (d?.profile?.onlineId) return { onlineId: d.profile.onlineId, avatar };
+  } catch (e) {
+    log('psn', `Profile (profile service) unavailable: ${e.message}`);
+  }
+  return null;
+}
+
 export async function syncPlayStation({ npsso }) {
   const token = await getAccessToken(npsso);
   const auth = { Authorization: `Bearer ${token}` };
 
   const [profile, trophyTitles, played] = await Promise.all([
-    fetchJson(`${API}/userProfile/v1/internal/users/me/profiles`, { headers: auth }).catch(() => null),
+    getProfile(auth),
     paginate((o) => `${API}/trophy/v1/users/me/trophyTitles?limit=800&offset=${o}`, (d) => d.trophyTitles, auth),
     paginate(
       (o) => `${API}/gamelist/v2/users/me/titles?categories=ps4_game,ps5_native_game&limit=200&offset=${o}`,
@@ -164,8 +188,7 @@ export async function syncPlayStation({ npsso }) {
     });
   }
 
-  const avatar = profile?.avatars?.find((a) => a.size === 'xl')?.url || profile?.avatars?.at(-1)?.url || null;
-  return { profile: { name: profile?.onlineId || 'PlayStation', avatar, url: null }, games: mergeVersions(games) };
+  return { profile: { name: profile?.onlineId || 'PlayStation', avatar: profile?.avatar || null, url: null }, games: mergeVersions(games) };
 }
 
 /**
