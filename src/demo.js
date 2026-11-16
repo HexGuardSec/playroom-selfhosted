@@ -83,10 +83,16 @@ export function buildDemoLibrary(config) {
     ['Mario Kart 8 Deluxe', 'Switch', 91, false, true], ['Animal Crossing: New Horizons', 'Switch', 240, false],
     ['Metroid Dread', 'Switch', 14, true], ['Pokémon Scarlet', 'Switch', 47, false], ['Donkey Kong Bananza', 'Switch 2', 26, false],
   ];
+  // IGDB covers, as Playroom finds them when IGDB is configured
+  const NINTENDO_COVERS = {
+    'The Legend of Zelda: Tears of the Kingdom': 'co5vmg', 'Super Mario Odyssey': 'co1mxf', 'Mario Kart 8 Deluxe': 'co213p',
+    'Animal Crossing: New Horizons': 'co3wls', 'Metroid Dread': 'coba9g', 'Pokémon Scarlet': 'co5sfi', 'Donkey Kong Bananza': 'cobd1q',
+  };
+  const igdbCover = (title) => (NINTENDO_COVERS[title] ? `https://images.igdb.com/igdb/image/upload/t_cover_big_2x/${NINTENDO_COVERS[title]}.jpg` : null);
   nintendo.forEach(([title, system, hours, completed, online = false], i) => {
     games.push({
       online,
-      id: `nintendo-demo-${i}`, platform: 'nintendo', system, title, cover: null, coverFallback: null, hero: null, hours,
+      id: `nintendo-demo-${i}`, platform: 'nintendo', system, title, cover: igdbCover(title), coverFallback: null, hero: null, hours,
       lastPlayed: daysAgo(i * 11 + 1), achievements: null, completed, completedAt: completed ? daysAgo(90 + i * 30) : null, url: null,
     });
   });
