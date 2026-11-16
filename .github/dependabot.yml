@@ -1,0 +1,9 @@
+# Playroom has no npm dependencies: only the GitHub Actions used by CI need watching
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ci
