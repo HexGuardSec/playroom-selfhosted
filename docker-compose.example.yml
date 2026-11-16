@@ -1,0 +1,23 @@
+# Playroom with the prebuilt image: no need to clone the repository.
+#   mkdir playroom && cd playroom
+#   curl -O https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/docker-compose.example.yml
+#   mv docker-compose.example.yml compose.yaml && docker compose up -d
+services:
+  playroom:
+    image: ghcr.io/hexguardsec/playroom-selfhosted:latest
+    container_name: playroom
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Paris
+    ports:
+      - "8080:8080"
+    volumes:
+      # Account, keys, notes and history: back this folder up
+      - ./data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

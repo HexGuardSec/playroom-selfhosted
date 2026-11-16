@@ -26,14 +26,17 @@ Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès,
 
 ## Démarrage rapide
 
-Avec Docker :
+Avec Docker et l'image toute prête (amd64 et arm64, donc aussi sur Raspberry Pi) :
 
 ```bash
-git clone https://github.com/HexGuardSec/playroom-selfhosted.git
-cd playroom-selfhosted
-docker compose up -d --build
+mkdir playroom && cd playroom
+curl -o compose.yaml https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/docker-compose.example.yml
+mkdir data && sudo chown 1000:1000 data     # le conteneur tourne avec l'utilisateur 1000
+docker compose up -d
 docker compose logs | grep -i "setup code"
 ```
+
+Tu préfères la construire toi-même ? `git clone` du dépôt, `mkdir -p data && sudo chown 1000:1000 data`, puis `docker compose up -d --build`.
 
 Ouvre `http://TON-SERVEUR:8080`. La page d'installation te demande :
 
@@ -73,7 +76,7 @@ Sans Docker, Node.js 22 ou plus suffit. Sur Debian ou Ubuntu : `sudo ./deploy/in
 ## Entretien
 
 - **Sauvegarde le dossier `data/`** : compte, clés, notes, jeux Nintendo et historique (l'historique ne peut pas être reconstruit).
-- **Mise à jour** : `git pull && docker compose up -d --build`.
+- **Mise à jour** : `docker compose pull && docker compose up -d` (ou `git pull && docker compose up -d --build` si tu construis l'image toi-même).
 - **Mot de passe oublié** : arrête le serveur, supprime `data/account.json` et `data/sessions.json`, puis redémarre. Un nouveau code d'installation apparaît dans les logs, et ta collection est conservée.
 
 La documentation complète (configuration, widget pour tableau de bord, architecture) est dans le [README anglais](README.md).

@@ -10,6 +10,7 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 ![Node.js 22+](https://img.shields.io/badge/node-%E2%89%A522-339933)
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
+[![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
 
 [Français](README_fr.md)
 
@@ -31,14 +32,17 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 
 ## Quick start
 
-With Docker:
+With Docker and the prebuilt image (amd64 and arm64, so a Raspberry Pi works too):
 
 ```bash
-git clone https://github.com/HexGuardSec/playroom-selfhosted.git
-cd playroom-selfhosted
-docker compose up -d --build
+mkdir playroom && cd playroom
+curl -o compose.yaml https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/docker-compose.example.yml
+mkdir data && sudo chown 1000:1000 data     # the container runs as user 1000
+docker compose up -d
 docker compose logs | grep -i "setup code"
 ```
+
+Prefer to build it yourself? `git clone` this repository, run `mkdir -p data && sudo chown 1000:1000 data`, then `docker compose up -d --build`.
 
 Open `http://YOUR-SERVER:8080`. The setup page asks for:
 
@@ -142,7 +146,7 @@ Found a vulnerability? See [SECURITY.md](SECURITY.md).
 ## Backups and maintenance
 
 - **Back up the `data/` folder.** It holds your account, keys, ratings, Nintendo games and history. History cannot be rebuilt.
-- **Update**: `git pull && docker compose up -d --build`.
+- **Update**: `docker compose pull && docker compose up -d` (or `git pull && docker compose up -d --build` if you build it yourself).
 - **Forgot your password?** Stop the server, delete `data/account.json` and `data/sessions.json`, then start it again. A new setup code appears in the logs. Your collection and keys are kept.
 
 ## How it works

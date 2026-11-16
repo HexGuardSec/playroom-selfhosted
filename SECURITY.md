@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Only the latest release receives security fixes. Update with `git pull && docker compose up -d --build`.
+Only the latest release receives security fixes. Update with `docker compose pull && docker compose up -d`.
 
 ## Reporting a vulnerability
 
