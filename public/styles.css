@@ -675,3 +675,13 @@ body::before {
 /* A hidden element stays hidden, whatever its display style */
 [hidden] { display: none !important; }
 .settings > h1 { margin: 40px 0 0; font: 700 clamp(36px, 5vw, 56px)/1 var(--display); }
+
+/* Small phones: the actions get their own row instead of being cut off,
+   and the language picker sits next to the brand */
+.live, .sync { white-space: nowrap; }
+@media (max-width: 520px) {
+  .topbar-end { flex: 1 1 100%; flex-wrap: wrap; gap: 6px; margin-left: 0; }
+  .topbar-end .lang-pick { position: absolute; top: 8px; inset-inline-end: 16px; }
+  .live, .sync { padding: 6px 9px; font-size: 12px; }
+  .lang-pick select { max-width: 110px; font-size: 12px; padding-block: 6px; }
+}
