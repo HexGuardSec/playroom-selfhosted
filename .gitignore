@@ -1,0 +1,12 @@
+# Secrets et données personnelles : ne jamais publier
+.env
+.env.*
+!.env.example
+data/
+
+# Divers
+node_modules/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

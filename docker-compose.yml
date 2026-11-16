@@ -1,0 +1,24 @@
+services:
+  playroom:
+    build: .
+    container_name: playroom
+    restart: unless-stopped
+    # The .env file is optional (technical settings only)
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      # Account, keys, notes and history: back this folder up
+      - ./data:/app/data
+    # Hardening: read-only file system (except data), no privileges
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

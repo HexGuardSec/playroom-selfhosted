@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playroom</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/" id="brand">Playroom</a>
+    <nav class="tabs" id="tabs" aria-label="Platforms"></nav>
+    <div class="topbar-end">
+      <button class="live" id="live" hidden></button>
+      <button class="sync" id="syncBtn" hidden></button>
+      <div class="account" id="account"></div>
+      <label class="lang-pick" title="Language">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <select id="langSel" aria-label="Language"></select>
+      </label>
+    </div>
+  </header>
+
+  <div id="notices"></div>
+
+  <main id="app" tabindex="-1">
+    <div class="boot"><span class="spinner"></span></div>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <dialog class="gamepage" id="gamepage" aria-labelledby="gpTitle">
+    <button class="gp-close" id="gpClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div id="gpBody"></div>
+  </dialog>
+
+  <dialog class="login-dlg" id="loginDlg" aria-labelledby="loginTitle"></dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

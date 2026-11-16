@@ -1,0 +1,48 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+        **Never paste an API key, an NPSSO token or a password here.** For security issues, use the Security tab instead.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the PlayStation page
+        2. Click on a game
+        3. …
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform involved
+      multiple: true
+      options: [Steam, PlayStation, Xbox, Nintendo, IGDB, Not platform-specific]
+  - type: dropdown
+    id: deploy
+    attributes:
+      label: How do you run Playroom?
+      options: [Docker, systemd (deploy/install.sh), node server.js, Other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: "2.0.0 or a commit hash"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Output of `docker compose logs --tail 100`. Check that it contains no secret before pasting.
+      render: text
