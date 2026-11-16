@@ -42,6 +42,27 @@ try {
   for (const p of ['me', 'library', 'activity', 'presence', 'status']) {
     fs.writeFileSync(path.join(out, 'api', p), await get(`api/${p}`));
   }
+  // GitHub Pages cannot send security headers: the same policy goes in a meta tag
+  // (frame-ancestors is not allowed there), plus no referrer to other sites
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "img-src 'self' https: data:",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'none'",
+    "form-action 'none'",
+  ].join('; ');
+  const indexFile = path.join(out, 'index.html');
+  const html = fs.readFileSync(indexFile, 'utf8');
+  const anchor = '<meta charset="utf-8">';
+  if (!html.includes(anchor)) throw new Error('index.html: charset tag not found');
+  fs.writeFileSync(
+    indexFile,
+    html.replace(anchor, `${anchor}\n  <meta http-equiv="Content-Security-Policy" content="${csp}">\n  <meta name="referrer" content="no-referrer">`)
+  );
   // GitHub Pages: serve files as they are (no Jekyll processing)
   fs.writeFileSync(path.join(out, '.nojekyll'), '');
   const n = JSON.parse(fs.readFileSync(path.join(out, 'api', 'library'), 'utf8')).games.length;
