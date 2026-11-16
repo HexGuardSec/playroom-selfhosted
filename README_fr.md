@@ -91,6 +91,10 @@ La documentation complète (configuration, widget pour tableau de bord, architec
 
 Signalements de bugs, traductions et pull requests sont les bienvenus : voir [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Déclaration sur l'IA
+
+Playroom a été développé avec une aide importante d'un assistant IA. [AI-DECLARATION.md](AI-DECLARATION.md) (en anglais) détaille ce que l'IA a fait et ce qu'un humain a fait.
+
 ## Licence
 
 [GNU AGPL v3.0](LICENSE). Tu peux utiliser, étudier, modifier et partager Playroom. Si tu fais tourner une version modifiée pour d'autres personnes, y compris en ligne, tu dois publier tes modifications sous la même licence.

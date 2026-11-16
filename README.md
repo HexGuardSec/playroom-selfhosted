@@ -184,6 +184,10 @@ npm run check && npm test
 
 Playroom is an independent project, not affiliated with or endorsed by Valve, Sony Interactive Entertainment, Microsoft, Nintendo or Twitch. Game names, covers and logos belong to their respective owners.
 
+## AI declaration
+
+Playroom was built with significant help from an AI assistant. [AI-DECLARATION.md](AI-DECLARATION.md) says what the AI did and what a human did.
+
 ## License
 
 [GNU Affero General Public License v3.0](LICENSE). You may use, study, modify and share Playroom. If you run a modified version for other people, including over a network, you must publish your changes under the same license.
