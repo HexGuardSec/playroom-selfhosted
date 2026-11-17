@@ -6,6 +6,7 @@ Thanks for your interest! Bug reports, translations and pull requests are all we
 
 - **Bugs and ideas**: open an issue first, with the bug report or feature request template.
 - **Security issues**: do not open a public issue. Follow [SECURITY.md](SECURITY.md).
+- **Questions and discussion**: join the [Discord server](https://discord.gg/xy9nYXxRvW), channels #dev, #bugs and #idées.
 - **Large changes**: open an issue to discuss them before writing the code, so your work is not wasted.
 
 ## Local setup

@@ -6,7 +6,7 @@
 
 Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès, calendrier d'activité et la pile des jeux jamais commencés.
 
-**[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [English](README.md)
+**[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [English](README.md) · [Discord](https://discord.gg/xy9nYXxRvW)
 
 [![Visite de Playroom : accueil, fiche de jeu, bibliothèque, activité, pile de la honte, classement](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
@@ -95,7 +95,7 @@ La documentation complète (configuration, widget pour tableau de bord, architec
 
 ## Contribuer
 
-Signalements de bugs, traductions et pull requests sont les bienvenus : voir [CONTRIBUTING.md](CONTRIBUTING.md).
+Une question, une idée ? Viens en parler sur le [serveur Discord](https://discord.gg/xy9nYXxRvW). Signalements de bugs, traductions et pull requests sont les bienvenus : voir [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Feuille de route
 

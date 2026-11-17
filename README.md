@@ -10,6 +10,7 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 ![Node.js 22+](https://img.shields.io/badge/node-%E2%89%A522-339933)
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
+[![Discord](https://img.shields.io/badge/Discord-Hex%20Ops-5865F2?logo=discord&logoColor=white)](https://discord.gg/xy9nYXxRvW)
 [![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
 
 **[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · [Français](README_fr.md)
@@ -181,7 +182,7 @@ Each sync compares playtime with the previous one and credits the difference to 
 
 ## Contributing
 
-Bug reports, translations and pull requests are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Before opening a pull request, run:
+Bug reports, translations and pull requests are welcome. Questions, ideas or just want to chat? Join the [Discord server](https://discord.gg/xy9nYXxRvW). Start with [CONTRIBUTING.md](CONTRIBUTING.md). Before opening a pull request, run:
 
 ```bash
 npm run check && npm test
