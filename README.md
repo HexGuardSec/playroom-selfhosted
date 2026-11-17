@@ -180,9 +180,20 @@ Bug reports, translations and pull requests are welcome. Start with [CONTRIBUTIN
 npm run check && npm test
 ```
 
+## Roadmap
+
+What comes next, with target dates: [ROADMAP.md](ROADMAP.md).
+
+## Policies
+
+- [Security policy](SECURITY.md): how to report a vulnerability privately.
+- [Privacy](PRIVACY.md): what Playroom stores, and which services it contacts. No telemetry.
+- [Legal notice](LEGAL.md): trademarks, third-party API terms, no piracy, no warranty.
+- [Code of conduct](CODE_OF_CONDUCT.md) and [getting help](SUPPORT.md).
+
 ## Disclaimer
 
-Playroom is an independent project, not affiliated with or endorsed by Valve, Sony Interactive Entertainment, Microsoft, Nintendo or Twitch. Game names, covers and logos belong to their respective owners.
+Playroom is an independent project, not affiliated with or endorsed by Valve, Sony Interactive Entertainment, Microsoft, Nintendo, Twitch or Playnite. Game names, covers and logos belong to their respective owners.
 
 ## AI declaration
 

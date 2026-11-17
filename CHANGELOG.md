@@ -2,6 +2,14 @@
 
 All notable changes to Playroom are listed here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Roadmap with target dates (`ROADMAP.md`).
+- Privacy notice, legal notice, code of conduct, support guide and `CODEOWNERS`.
+- Security policy: supported versions, response times, safe harbor.
+- Contributing guide: rules for AI-assisted contributions and licensing of contributions.
+
 ## [2.0.1] - 2026-11-16
 
 ### Added

@@ -70,3 +70,19 @@ Short, in English, in the imperative mood: `Fix PS5 playtime on games without tr
 ## License
 
 By contributing, you agree that your contributions are licensed under the [GNU AGPL v3.0](LICENSE), like the rest of the project.
+
+## AI-assisted contributions
+
+AI tools are allowed, as they were used to build Playroom (see [AI-DECLARATION.md](AI-DECLARATION.md)). If you use one:
+
+- say so in the pull request description;
+- review, run and understand every line you submit: you are responsible for it;
+- never paste API keys, tokens or private logs into an AI tool.
+
+## Licensing of contributions
+
+Playroom is licensed under the AGPL-3.0. By opening a pull request, you agree that your contribution is published under the same license. Only submit code you wrote or have the right to share, and keep the copyright notices of any code you reuse.
+
+## Code of conduct
+
+Everyone taking part follows the [code of conduct](CODE_OF_CONDUCT.md).

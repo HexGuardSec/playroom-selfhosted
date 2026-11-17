@@ -2,6 +2,11 @@
 
 ## Supported versions
 
+| Version | Security fixes |
+|---|---|
+| 2.0.x (latest) | Yes |
+| 1.x and older | No |
+
 Only the latest release receives security fixes. Update with `docker compose pull && docker compose up -d`.
 
 ## Reporting a vulnerability
@@ -14,7 +19,18 @@ Report it privately through GitHub instead: the repository's **Security** tab, t
 - the steps to reproduce, or a proof of concept;
 - the Playroom version or commit, and how it is deployed (Docker, systemd, reverse proxy).
 
-You should get an answer within a week. Once a fix is released, you will be credited in the changelog unless you prefer to stay anonymous.
+## What happens next
+
+- **Within 7 days**: an acknowledgement and a first assessment.
+- **Within 30 days** for a confirmed issue: a fix, or a plan with a date if it takes longer.
+- A GitHub security advisory is published with the fixed release, and a CVE is requested when it is warranted.
+- You are credited in the advisory and the changelog, unless you prefer to stay anonymous.
+
+Please give us the time to release a fix before disclosing the issue publicly.
+
+## Safe harbor
+
+Research done in good faith on **your own installation** of Playroom is welcome, and will not lead to any complaint from the project. Do not test against other people's instances, the platforms' APIs (Steam, PlayStation, Xbox, IGDB) or the GitHub Pages demo infrastructure.
 
 ## Scope
 

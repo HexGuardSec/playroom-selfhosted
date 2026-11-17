@@ -91,6 +91,17 @@ La documentation complète (configuration, widget pour tableau de bord, architec
 
 Signalements de bugs, traductions et pull requests sont les bienvenus : voir [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Feuille de route
+
+La suite, avec les dates visées : [ROADMAP.md](ROADMAP.md) (en anglais).
+
+## Politiques du projet
+
+- [Sécurité](SECURITY.md) : signaler une faille en privé.
+- [Confidentialité](PRIVACY.md) : ce que Playroom stocke et les services qu'il contacte. Aucune télémétrie.
+- [Mentions légales](LEGAL.md) : marques, conditions des API tierces, pas de piratage, aucune garantie.
+- [Code de conduite](CODE_OF_CONDUCT.md) et [obtenir de l'aide](SUPPORT.md).
+
 ## Déclaration sur l'IA
 
 Playroom a été développé avec une aide importante d'un assistant IA. [AI-DECLARATION.md](AI-DECLARATION.md) (en anglais) détaille ce que l'IA a fait et ce qu'un humain a fait.
@@ -99,4 +110,4 @@ Playroom a été développé avec une aide importante d'un assistant IA. [AI-DEC
 
 [GNU AGPL v3.0](LICENSE). Tu peux utiliser, étudier, modifier et partager Playroom. Si tu fais tourner une version modifiée pour d'autres personnes, y compris en ligne, tu dois publier tes modifications sous la même licence.
 
-Playroom est un projet indépendant, sans lien avec Valve, Sony Interactive Entertainment, Microsoft, Nintendo ou Twitch.
+Playroom est un projet indépendant, sans lien avec Valve, Sony Interactive Entertainment, Microsoft, Nintendo, Twitch ou Playnite. Les noms, jaquettes et logos des jeux appartiennent à leurs propriétaires.
