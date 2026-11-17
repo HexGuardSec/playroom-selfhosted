@@ -6,7 +6,9 @@ services:
     image: ghcr.io/hexguardsec/playroom-selfhosted:latest
     container_name: playroom
     restart: unless-stopped
-    user: "1000:1000"
+    # Root inside the container only, to write to the folder CasaOS creates;
+    # all capabilities are dropped and the file system is read-only.
+    user: "0:0"
     environment:
       TZ: Europe/Paris
     ports:
