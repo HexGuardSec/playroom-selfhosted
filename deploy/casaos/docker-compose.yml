@@ -1,0 +1,56 @@
+# Playroom for CasaOS: in the CasaOS dashboard, App Store > Custom Install > Import,
+# then paste this file.
+name: playroom
+services:
+  playroom:
+    image: ghcr.io/hexguardsec/playroom-selfhosted:latest
+    container_name: playroom
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      TZ: Europe/Paris
+    ports:
+      - target: 8080
+        published: "8080"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/playroom/data
+        target: /app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: Time zone used for the activity calendar
+      ports:
+        - container: "8080"
+          description:
+            en_us: Web UI port
+      volumes:
+        - container: /app/data
+          description:
+            en_us: Account, API keys, notes and history (back it up)
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: playroom
+  category: Entertainment
+  author: HexGuardSec
+  developer: HexGuardSec
+  icon: https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/docs/brand/playroom-icon-512.png
+  tagline:
+    en_us: Your Steam, PlayStation, Xbox and Nintendo games in one place
+  description:
+    en_us: Self-hosted video game collection with covers, playtime, achievements, an activity calendar and your backlog. On first launch, read the setup code in the container logs.
+  title:
+    en_us: Playroom
+  index: /
+  port_map: "8080"

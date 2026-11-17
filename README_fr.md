@@ -57,6 +57,12 @@ Pour juste regarder : `DEMO=true node server.js` lance une collection fictive en
 
 Sans Docker, Node.js 22 ou plus suffit. Sur Debian ou Ubuntu : `sudo ./deploy/install.sh`, puis `journalctl -u playroom | grep -i "setup code"`.
 
+### Unraid, CasaOS et Proxmox
+
+- **Unraid** : modèle à importer depuis `https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/deploy/unraid/playroom.xml`
+- **CasaOS** : *App Store* → *Custom Install* → *Import*, puis colle [`deploy/casaos/docker-compose.yml`](deploy/casaos/docker-compose.yml).
+- **Proxmox VE** : le fichier compose dans un conteneur LXC ou une VM avec Docker, ou `deploy/install.sh` dans un conteneur Debian.
+
 ## Obtenir les clés
 
 | Plateforme | Où | À savoir |

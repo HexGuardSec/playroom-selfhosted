@@ -78,6 +78,13 @@ sudo ./deploy/install.sh            # installs Node 22, copies to /opt/playroom,
 journalctl -u playroom | grep -i "setup code"
 ```
 
+### Unraid, CasaOS and Proxmox
+
+- **Unraid**: in the Docker tab, *Add Container*, then paste this template URL in *Template repositories* (Docker settings) or import it directly:
+  `https://raw.githubusercontent.com/HexGuardSec/playroom-selfhosted/main/deploy/unraid/playroom.xml`
+- **CasaOS**: *App Store* → *Custom Install* → *Import*, and paste [`deploy/casaos/docker-compose.yml`](deploy/casaos/docker-compose.yml).
+- **Proxmox VE**: run the Docker compose file in an LXC container or a VM with Docker, or use `deploy/install.sh` in a Debian container.
+
 ## Getting the API keys
 
 | Platform | Where | Notes |

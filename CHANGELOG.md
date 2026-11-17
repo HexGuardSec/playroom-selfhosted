@@ -9,6 +9,7 @@ All notable changes to Playroom are listed here. Versions follow [Semantic Versi
 - Privacy notice, legal notice, code of conduct, support guide and `CODEOWNERS`.
 - Security policy: supported versions, response times, safe harbor.
 - Contributing guide: rules for AI-assisted contributions and licensing of contributions.
+- Unraid template and CasaOS compose file, with a 512 px app icon.
 
 ## [2.0.1] - 2026-11-16
 
