@@ -4,11 +4,11 @@ This is the plan for the next releases. Dates are targets, not promises: Playroo
 
 Each release is tracked by a GitHub milestone of the same name.
 
-## 2.0.2 — privacy and housekeeping (end of November 2026)
+## 2.0.2 — privacy and housekeeping (released November 2026)
 
-- **Self-host the fonts.** Chakra Petch and Barlow are loaded from Google Fonts today, which sends each visitor's IP address to Google. Ship the font files in the image (both are under the SIL Open Font License) and drop the external requests from the CSP.
+- **Self-host the fonts** (done). Chakra Petch and Barlow ship with Playroom, and the CSP no longer allows any font service.
 - **Project policies**: privacy notice, legal notice, code of conduct, support guide (done in this release).
-- **Repository protections**: no force push or deletion on `main`, protected release tags, secret scanning with push protection.
+- **Repository protections** (done): no force push or deletion on `main`, protected release tags, secret scanning with push protection.
 
 ## 2.1 — notifications and data portability (mid-December 2026)
 

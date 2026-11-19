@@ -2,7 +2,10 @@
 
 All notable changes to Playroom are listed here. Versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [2.0.2] - 2026-11-20
+
+### Privacy
+- Fonts are now served by Playroom itself. The interface no longer contacts Google Fonts, and the Content Security Policy allows fonts from your own server only.
 
 ### Added
 - Roadmap with target dates (`ROADMAP.md`).

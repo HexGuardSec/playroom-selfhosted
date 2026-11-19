@@ -30,7 +30,7 @@ Each of these services applies its own privacy policy to those requests.
 
 - Pages, scripts, styles and covers proxied by your server.
 - Some covers directly from the Steam and IGDB image servers.
-- **Fonts from Google Fonts** (`fonts.googleapis.com`, `fonts.gstatic.com`). This shares the visitor's IP address with Google. It will be removed in version 2.0.2 (see [ROADMAP.md](ROADMAP.md)). If you need it gone now, for example to comply with the GDPR in the EU, block those two domains: the interface falls back to system fonts.
+- Nothing else: since version 2.0.2 the fonts (Chakra Petch and Barlow, SIL Open Font License) are served by your own server. No request goes to Google or any font service.
 
 Playroom sets a single cookie: the owner's `HttpOnly`, `SameSite=Strict` session cookie, only after sign-in. There are no tracking or advertising cookies, so no cookie banner is needed.
 

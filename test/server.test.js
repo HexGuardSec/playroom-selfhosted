@@ -33,6 +33,15 @@ test('security headers and hidden files', async () => {
   for (const p of ['/.env', '/%2e%2e/server.js', '/..%2fserver.js', '/missing.js']) assert.equal((await fetch(BASE + p)).status, 404, p);
 });
 
+test('fonts are served locally, nothing loads from Google', async () => {
+  const res = await fetch(`${BASE}/fonts/barlow-400.woff`);
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get('content-type'), 'font/woff');
+  const page = await fetch(`${BASE}/`);
+  assert.doesNotMatch(page.headers.get('content-security-policy'), /google|gstatic/);
+  assert.doesNotMatch(await page.text(), /fonts\.googleapis|fonts\.gstatic/);
+});
+
 test('setup requires the code, then signs in with a cookie', async () => {
   const me = await (await fetch(BASE + '/api/me')).json();
   assert.equal(me.setup, true);
