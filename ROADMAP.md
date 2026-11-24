@@ -25,6 +25,10 @@ Each release is tracked by a GitHub milestone of the same name.
 - **Wishlist** and a "next up" list for the backlog.
 - **Year in review** page: hours played, games finished, most played platform, best month.
 - Better search and filters (platform, status, rating, time to beat).
+- **One game, every platform** ([#7](https://github.com/HexGuardSec/playroom-selfhosted/issues/7)): the same game owned on several platforms gets a single card and page (for example "Minecraft"), with one row per version (Xbox 360, Bedrock, Java, Android) showing its own playtime and achievements, and the totals on top. Versions are grouped through IGDB, with a "group with…" button to fix mistakes. A "Mobile / other" section, filled by hand like Nintendo, covers versions that have no API.
+- **Genres and themes** ([#8](https://github.com/HexGuardSec/playroom-selfhosted/issues/8)): filter by genre (action, RPG, strategy…) and theme (horror, science fiction…), taken from IGDB.
+- **Windows, macOS and Linux badges** on Steam games, from the Steam store data, with a "plays on Linux" filter.
+- **ProtonDB rating and Steam Deck status** for Steam games: how well each game runs on Linux through Proton (platinum to borked) and Valve's Steam Deck verdict. ProtonDB has no official API, so this stays optional, cached, and the rest of Playroom keeps working if it stops answering.
 
 ## 2.3 — more platforms (February 2027)
 
