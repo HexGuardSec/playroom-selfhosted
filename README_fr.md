@@ -6,7 +6,7 @@
 
 Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès, calendrier d'activité et la pile des jeux jamais commencés.
 
-**[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [English](README.md) · [Discord](https://discord.gg/xy9nYXxRvW)
+**[▶ Essayer la démo en ligne](https://hexguardsec.github.io/playroom-selfhosted/)** · [Page du projet sur nillume.com](https://nillume.com/projets#playroom) · [English](README.md) · [Discord](https://discord.gg/xy9nYXxRvW)
 
 [![Visite de Playroom : accueil, fiche de jeu, bibliothèque, activité, pile de la honte, classement](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
@@ -96,6 +96,10 @@ La documentation complète (configuration, widget pour tableau de bord, architec
 ## Contribuer
 
 Une question, une idée ? Viens en parler sur le [serveur Discord](https://discord.gg/xy9nYXxRvW). Signalements de bugs, traductions et pull requests sont les bienvenus : voir [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Un projet Nillume
+
+Playroom fait partie de [**Nillume**](https://nillume.com/), une collection d'outils open source pour l'auto-hébergement, conçus avec la sécurité comme priorité. Sur le site : la [page du projet](https://nillume.com/projets#playroom), le [journal](https://nillume.com/journal) (nouveautés et coulisses) et un [compte](https://nillume.com/inscription) pour donner ton avis sur les projets. Les prochains outils y seront annoncés en premier.
 
 ## Feuille de route
 

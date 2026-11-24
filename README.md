@@ -12,8 +12,9 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 [![Discord](https://img.shields.io/badge/Discord-Hex%20Ops-5865F2?logo=discord&logoColor=white)](https://discord.gg/xy9nYXxRvW)
 [![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
+[![Website](https://img.shields.io/badge/website-nillume.com-FFB547)](https://nillume.com/en/)
 
-**[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · [Français](README_fr.md)
+**[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · [Project page on nillume.com](https://nillume.com/en/projects#playroom) · [Français](README_fr.md)
 
 [![Tour of Playroom: home, game page, library, activity, pile of shame, ratings](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
@@ -187,6 +188,10 @@ Bug reports, translations and pull requests are welcome. Questions, ideas or jus
 ```bash
 npm run check && npm test
 ```
+
+## A Nillume project
+
+Playroom is part of [**Nillume**](https://nillume.com/en/), a collection of open source self-hosting tools designed with security first. On the website: the [project page](https://nillume.com/en/projects#playroom), the [journal](https://nillume.com/en/journal) with release notes and behind the scenes, and an [account](https://nillume.com/en/register) to leave feedback on the projects. Upcoming tools will be announced there first.
 
 ## Roadmap
 
