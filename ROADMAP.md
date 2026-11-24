@@ -16,6 +16,7 @@ Each release is tracked by a GitHub milestone of the same name.
 - **Export** the whole collection to JSON and CSV from the Settings page: your data must stay yours.
 - **Backup and restore** of the `data/` folder from the Settings page, with a clear warning that the archive contains API keys.
 - **Import from Playnite**: read the file produced by Playnite's library exporter (titles, platforms, playtime, completion status). Covers are fetched by Playroom from IGDB or Steam, never copied from Playnite. Playroom stays independent from Playnite.
+- **RomM connector** ([#6](https://github.com/HexGuardSec/playroom-selfhosted/issues/6), requested by the community): enter your RomM URL and a read-only Client API Token in Settings, and Playroom syncs your RomM games and platforms with their covers, with a manual "Sync" button and a clear message when the connection fails. The token is stored like the other API keys. Aiming for 2.1; if it runs into problems, it ships in 2.2 at the latest.
 
 ## 2.2 — the collection itself (January 2027)
 
