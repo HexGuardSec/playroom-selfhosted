@@ -35,10 +35,10 @@ Steam, PlayStation, Xbox et Nintendo réunis : jaquettes, temps de jeu, succès,
 
 ## Un projet Nillume
 
-Playroom fait partie de [**Nillume**](https://nillume.com/), ma collection d'outils open source pour l'auto-hébergement, conçus avec la sécurité comme priorité. **[nillume.com](https://nillume.com/) est l'endroit pour :**
+Playroom fait partie de [**Nillume**](https://nillume.com/fr/), ma collection d'outils open source pour l'auto-hébergement, conçus avec la sécurité comme priorité. **[nillume.com](https://nillume.com/fr/) est l'endroit pour :**
 
-- **donner ton avis** : commente la [page de Playroom](https://nillume.com/projets#comments-playroom) avec un [compte](https://nillume.com/inscription) gratuit, double authentification disponible ;
-- **suivre ce qui arrive** : le [journal](https://nillume.com/journal) publie les nouveautés et les coulisses ;
+- **donner ton avis** : commente la [page de Playroom](https://nillume.com/projets#comments-playroom) avec un [compte](https://nillume.com/fr/inscription) gratuit, double authentification disponible ;
+- **suivre ce qui arrive** : le [journal](https://nillume.com/fr/journal) publie les nouveautés et les coulisses ;
 - **découvrir les prochains outils**, annoncés là-bas en premier.
 
 ## Démarrage rapide

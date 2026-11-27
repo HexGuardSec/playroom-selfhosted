@@ -12,16 +12,16 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
 [![Discord](https://img.shields.io/badge/Discord-Nillume-5865F2?logo=discord&logoColor=white)](https://discord.gg/xy9nYXxRvW)
 [![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
-[![Website](https://img.shields.io/badge/website-nillume.com-FFB547)](https://nillume.com/en/)
+[![Website](https://img.shields.io/badge/website-nillume.com-FFB547)](https://nillume.com/)
 
-**[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · **[💬 Give your feedback on nillume.com](https://nillume.com/en/projects#comments-playroom)** · [Français](README_fr.md)
+**[▶ Try the live demo](https://hexguardsec.github.io/playroom-selfhosted/)** · **[💬 Give your feedback on nillume.com](https://nillume.com/projects#comments-playroom)** · [Français](README_fr.md)
 
 [![Tour of Playroom: home, game page, library, activity, pile of shame, ratings](docs/screenshots/tour.gif)](https://hexguardsec.github.io/playroom-selfhosted/)
 
 </div>
 
 > [!TIP]
-> **Tried Playroom? Tell me what you think.** Comments are open on the [Playroom page on nillume.com](https://nillume.com/en/projects#comments-playroom): what works, what is missing, what you would like next. Your feedback decides what goes into the next release, and no GitHub account is needed.
+> **Tried Playroom? Tell me what you think.** Comments are open on the [Playroom page on nillume.com](https://nillume.com/projects#comments-playroom): what works, what is missing, what you would like next. Your feedback decides what goes into the next release, and no GitHub account is needed.
 
 ## Features
 
@@ -43,10 +43,10 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 
 ## A Nillume project
 
-Playroom is part of [**Nillume**](https://nillume.com/en/), my collection of open source self-hosting tools designed with security first. **[nillume.com](https://nillume.com/en/) is the place to:**
+Playroom is part of [**Nillume**](https://nillume.com/), my collection of open source self-hosting tools designed with security first. **[nillume.com](https://nillume.com/) is the place to:**
 
-- **give your feedback**: comment on the [Playroom page](https://nillume.com/en/projects#comments-playroom) with a free [account](https://nillume.com/en/register), with two-factor authentication available;
-- **follow what is coming**: the [journal](https://nillume.com/en/journal) has release notes and behind the scenes;
+- **give your feedback**: comment on the [Playroom page](https://nillume.com/projects#comments-playroom) with a free [account](https://nillume.com/register), with two-factor authentication available;
+- **follow what is coming**: the [journal](https://nillume.com/journal) has release notes and behind the scenes;
 - **discover the next tools**, which are announced there first.
 
 ## Quick start
@@ -194,7 +194,7 @@ Each sync compares playtime with the previous one and credits the difference to 
 
 ## Contributing
 
-Bug reports, translations and pull requests are welcome. Questions, ideas or just want to chat? Join the [Discord server](https://discord.gg/xy9nYXxRvW), or leave a comment on [nillume.com](https://nillume.com/en/projects#comments-playroom) if you do not use GitHub. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Before opening a pull request, run:
+Bug reports, translations and pull requests are welcome. Questions, ideas or just want to chat? Join the [Discord server](https://discord.gg/xy9nYXxRvW), or leave a comment on [nillume.com](https://nillume.com/projects#comments-playroom) if you do not use GitHub. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Before opening a pull request, run:
 
 ```bash
 npm run check && npm test
