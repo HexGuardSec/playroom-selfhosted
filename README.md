@@ -10,7 +10,6 @@ Steam, PlayStation, Xbox and Nintendo in one place: covers, playtime, achievemen
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 ![Node.js 22+](https://img.shields.io/badge/node-%E2%89%A522-339933)
 ![No dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)
-[![Docker Pulls](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2FHexGuardSec%2Fplayroom-selfhosted%2Fplayroom-selfhosted&query=%24.downloadCount&logo=docker&label=docker%20pulls&color=blue)](https://github.com)
 [![Discord](https://img.shields.io/badge/Discord-Nillume-5865F2?logo=discord&logoColor=white)](https://discord.gg/xy9nYXxRvW)
 [![Docker image](https://img.shields.io/badge/image-ghcr.io-2496ED?logo=docker&logoColor=white)](https://github.com/HexGuardSec/playroom-selfhosted/pkgs/container/playroom-selfhosted)
 [![Website](https://img.shields.io/badge/website-nillume.com-FFB547)](https://nillume.com/)
