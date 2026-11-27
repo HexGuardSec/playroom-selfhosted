@@ -122,6 +122,7 @@ Everything you need is set from the website. The optional `.env` file only holds
 | `PRESENCE_INTERVAL_SECONDS` | `120` | "Now playing" check interval, `0` to disable |
 | `TRUST_PROXY` | `false` | Set to `true` behind a reverse proxy that handles HTTPS |
 | `DEMO` | `false` | Fake read-only collection |
+| `UPDATE_CHECK` | `true` | Once a day, ask GitHub whether a newer release exists (shown to you only), `false` to disable |
 
 API keys can also be set there (`STEAM_API_KEY`, `PSN_NPSSO`…). Values saved from the website take precedence.
 

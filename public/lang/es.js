@@ -93,6 +93,7 @@ export default {
   'setup.back': 'Atrás',
   'setup.finish': 'Crear mi cuenta',
   'setup.skip': 'Todas las plataformas son opcionales: rellena las que uses y añade las demás más tarde en Ajustes.',
+  'upd.available': 'Playroom {v} está disponible.', 'upd.notes': 'Ver las novedades', 'upd.how': 'Actualizar con', 'upd.hide': 'Ocultar', 'about.title': 'Acerca de Playroom', 'about.version': 'Versión {v}', 'about.upToDate': 'Estás al día.', 'about.newer': 'La versión {v} está disponible.', 'about.off': 'Comprobación de actualizaciones desactivada (UPDATE_CHECK=false).', 'about.unknown': 'Aún no comprobado.', 'about.nillume': 'Playroom es un proyecto de Nillume. Con una cuenta gratuita en nillume.com recibes un correo con cada nueva versión y puedes votar las próximas funciones.', 'about.join': 'Recibir aviso de nuevas versiones', 'about.ideas': 'Proponer o votar una función',
   'set.title': 'Ajustes',
   'set.collection': 'Colección',
   'set.name': 'Nombre del sitio',

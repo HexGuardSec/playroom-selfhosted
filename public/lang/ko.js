@@ -100,6 +100,7 @@ export default {
   'setup.back': '이전',
   'setup.finish': '계정 만들기',
   'setup.skip': '모든 플랫폼은 선택 사항입니다. 사용하는 것만 입력하고 나머지는 나중에 설정에서 추가하세요.',
+  'upd.available': 'Playroom {v}을(를) 사용할 수 있습니다.', 'upd.notes': '새로운 기능 보기', 'upd.how': '업데이트 명령', 'upd.hide': '숨기기', 'about.title': 'Playroom 정보', 'about.version': '버전 {v}', 'about.upToDate': '최신 버전입니다.', 'about.newer': '버전 {v}을(를) 사용할 수 있습니다.', 'about.off': '업데이트 확인이 꺼져 있습니다 (UPDATE_CHECK=false).', 'about.unknown': '아직 확인하지 않았습니다.', 'about.nillume': 'Playroom은 Nillume 프로젝트입니다. nillume.com 무료 계정이 있으면 새 버전이 나올 때마다 이메일을 받고 다음 기능에 투표할 수 있습니다.', 'about.join': '새 버전 알림 받기', 'about.ideas': '기능 제안 또는 투표',
   'set.title': '설정',
   'set.collection': '컬렉션',
   'set.name': '사이트 이름',

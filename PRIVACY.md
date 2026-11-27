@@ -23,6 +23,7 @@ Your server contacts these services only to fetch **your own** data, with the ke
 | PlayStation Network (Sony) | trophies and profile, through the NPSSO token | `ca.account.sony.com`, `m.np.playstation.com`, `us-prof.np.community.playstation.net` |
 | OpenXBL | Xbox history and achievements | `xbl.io` |
 | IGDB (Twitch) | covers and time to beat | `api.igdb.com`, `id.twitch.tv`, `images.igdb.com` |
+| GitHub | once a day, check whether a newer Playroom release exists (no data about you or your collection is sent; turn it off with `UPDATE_CHECK=false`) | `api.github.com` |
 
 Each of these services applies its own privacy policy to those requests.
 
@@ -30,7 +31,7 @@ Each of these services applies its own privacy policy to those requests.
 
 - Pages, scripts, styles and covers proxied by your server.
 - Some covers directly from the Steam and IGDB image servers.
-- Nothing else: since version 2.0.2 the fonts (Chakra Petch and Barlow, SIL Open Font License) are served by your own server. No request goes to Google or any font service.
+- Nothing else. Links to nillume.com (Settings › About) open only when you click them, and carry `?ref=playroom` so the site can count visits coming from Playroom. Since version 2.0.2 the fonts (Chakra Petch and Barlow, SIL Open Font License) are served by your own server. No request goes to Google or any font service.
 
 Playroom sets a single cookie: the owner's `HttpOnly`, `SameSite=Strict` session cookie, only after sign-in. There are no tracking or advertising cookies, so no cookie banner is needed.
 

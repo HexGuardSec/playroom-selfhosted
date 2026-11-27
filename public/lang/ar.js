@@ -100,6 +100,7 @@ export default {
   'setup.back': 'رجوع',
   'setup.finish': 'إنشاء حسابي',
   'setup.skip': 'كل المنصات اختيارية: املأ ما تستخدمه وأضف الباقي لاحقًا من الإعدادات.',
+  'upd.available': 'الإصدار {v} من Playroom متاح.', 'upd.notes': 'اطّلع على الجديد', 'upd.how': 'حدّث باستخدام', 'upd.hide': 'إخفاء', 'about.title': 'حول Playroom', 'about.version': 'الإصدار {v}', 'about.upToDate': 'لديك أحدث إصدار.', 'about.newer': 'الإصدار {v} متاح.', 'about.off': 'التحقق من التحديثات معطّل (UPDATE_CHECK=false).', 'about.unknown': 'لم يتم التحقق بعد.', 'about.nillume': 'Playroom مشروع من Nillume. بحساب مجاني على nillume.com تصلك رسالة بريدية مع كل إصدار جديد ويمكنك التصويت على الميزات القادمة.', 'about.join': 'أعلمني بالإصدارات الجديدة', 'about.ideas': 'اقترح ميزة أو صوّت عليها',
   'set.title': 'الإعدادات',
   'set.collection': 'المجموعة',
   'set.name': 'اسم الموقع',

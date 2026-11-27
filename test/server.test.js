@@ -83,3 +83,13 @@ test('brute force: blocked after 10 failures', async () => {
   assert.deepEqual(codes.slice(0, 10), Array(10).fill(401));
   assert.equal(codes[10], 429);
 });
+
+test('version and update status: owner only, never in demo, isNewer compares x.y.z', async () => {
+  const anon = await (await fetch(BASE + '/api/me')).json();
+  assert.equal(anon.update, undefined, 'visitors do not see the version');
+  const { isNewer } = await import('../src/updates.js');
+  assert.equal(isNewer('2.0.10', '2.0.9'), true);
+  assert.equal(isNewer('2.1.0', '2.0.3'), true);
+  assert.equal(isNewer('2.0.3', '2.0.3'), false);
+  assert.equal(isNewer('1.9.9', '2.0.0'), false);
+});

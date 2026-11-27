@@ -43,6 +43,8 @@ export const config = {
   // Collection visible without signing in (can be changed later in Settings)
   visibility: env('VISIBILITY', 'public') === 'private' ? 'private' : 'public',
   demo: bool('DEMO', false),
+  // Once a day, ask GitHub whether a newer Playroom release exists (shown to the owner only)
+  updateCheck: bool('UPDATE_CHECK', true),
 
   steam: {
     apiKey: env('STEAM_API_KEY'),

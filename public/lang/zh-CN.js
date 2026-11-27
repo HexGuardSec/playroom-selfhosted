@@ -100,6 +100,7 @@ export default {
   'setup.back': '上一步',
   'setup.finish': '创建账号',
   'setup.skip': '所有平台都是可选的：只填写你用的，其余的以后可在“设置”中添加。',
+  'upd.available': 'Playroom {v} 已发布。', 'upd.notes': '查看新功能', 'upd.how': '更新命令', 'upd.hide': '隐藏', 'about.title': '关于 Playroom', 'about.version': '版本 {v}', 'about.upToDate': '已是最新版本。', 'about.newer': '版本 {v} 已发布。', 'about.off': '已关闭更新检查（UPDATE_CHECK=false）。', 'about.unknown': '尚未检查。', 'about.nillume': 'Playroom 是 Nillume 的项目。在 nillume.com 注册免费账号后，每次发布新版本都会收到邮件，还可以为后续功能投票。', 'about.join': '接收新版本通知', 'about.ideas': '提议或投票新功能',
   'set.title': '设置',
   'set.collection': '收藏',
   'set.name': '网站名称',

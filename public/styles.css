@@ -694,3 +694,10 @@ body::before {
   .live, .sync { padding: 6px 9px; font-size: 12px; }
   .lang-pick select { max-width: 110px; font-size: 12px; padding-block: 6px; }
 }
+
+/* New version notice and About panel */
+.notice.upd { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; color: var(--text); }
+.notice.upd a { color: var(--xp); }
+.notice.upd code { white-space: nowrap; }
+.linkish { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font: inherit; margin-left: auto; }
+.about p { margin: 0; }

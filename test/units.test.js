@@ -131,3 +131,23 @@ test('Xbox: PC games seen by the Game Bar without Xbox achievements are skipped'
   assert.equal(isXboxGame({ devices: ['XboxSeries'], achievement: {} }), true);
   assert.equal(isXboxGame({ devices: ['Mobile'], achievement: { currentAchievements: 6 } }), true);
 });
+
+test('update check: reads the latest release tag, ignores bad answers, sends no personal data', async () => {
+  const u = await import('../src/updates.js');
+  let seen;
+  const ok = async (url, opts) => {
+    seen = { url, opts };
+    return { ok: true, json: async () => ({ tag_name: 'v9.9.9' }) };
+  };
+  assert.equal(await u.checkForUpdate(ok), '9.9.9');
+  assert.equal(seen.url, 'https://api.github.com/repos/HexGuardSec/playroom-selfhosted/releases/latest');
+  assert.deepEqual(Object.keys(seen.opts.headers).sort(), ['Accept', 'User-Agent']);
+  const info = u.updateInfo();
+  assert.equal(info.available, true);
+  assert.equal(info.url, 'https://github.com/HexGuardSec/playroom-selfhosted/releases/tag/v9.9.9');
+  // A strange tag or an error keeps the last good value
+  assert.equal(await u.checkForUpdate(async () => ({ ok: true, json: async () => ({ tag_name: '<script>' }) })), '9.9.9');
+  assert.equal(await u.checkForUpdate(async () => ({ ok: false, status: 403 })), '9.9.9');
+  u._setLatest(u.CURRENT);
+  assert.equal(u.updateInfo().available, false);
+});

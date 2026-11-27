@@ -100,6 +100,7 @@ export default {
   'setup.back': 'Terug',
   'setup.finish': 'Account aanmaken',
   'setup.skip': 'Elk platform is optioneel: vul in wat je gebruikt en voeg de rest later toe in Instellingen.',
+  'upd.available': 'Playroom {v} is beschikbaar.', 'upd.notes': 'Bekijk wat er nieuw is', 'upd.how': 'Bijwerken met', 'upd.hide': 'Verbergen', 'about.title': 'Over Playroom', 'about.version': 'Versie {v}', 'about.upToDate': 'Je bent up-to-date.', 'about.newer': 'Versie {v} is beschikbaar.', 'about.off': 'Updatecontrole uitgeschakeld (UPDATE_CHECK=false).', 'about.unknown': 'Nog niet gecontroleerd.', 'about.nillume': 'Playroom is een Nillume-project. Met een gratis account op nillume.com krijg je een e-mail bij elke nieuwe versie en kun je stemmen op de volgende functies.', 'about.join': 'Ontvang bericht over nieuwe versies', 'about.ideas': 'Een functie voorstellen of erop stemmen',
   'set.title': 'Instellingen',
   'set.collection': 'Collectie',
   'set.name': 'Naam van de site',

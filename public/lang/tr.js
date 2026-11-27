@@ -100,6 +100,7 @@ export default {
   'setup.back': 'Geri',
   'setup.finish': 'Hesabımı oluştur',
   'setup.skip': 'Tüm platformlar isteğe bağlı: kullandıklarını doldur, diğerlerini sonra Ayarlar’dan ekle.',
+  'upd.available': 'Playroom {v} yayında.', 'upd.notes': 'Yenilikleri gör', 'upd.how': 'Şununla güncelle', 'upd.hide': 'Gizle', 'about.title': 'Playroom hakkında', 'about.version': 'Sürüm {v}', 'about.upToDate': 'Güncelsin.', 'about.newer': '{v} sürümü yayında.', 'about.off': 'Güncelleme denetimi kapalı (UPDATE_CHECK=false).', 'about.unknown': 'Henüz denetlenmedi.', 'about.nillume': 'Playroom bir Nillume projesidir. nillume.com\'daki ücretsiz bir hesapla her yeni sürümde e-posta alır ve sonraki özellikler için oy verebilirsin.', 'about.join': 'Yeni sürümlerden haberdar ol', 'about.ideas': 'Özellik öner veya oy ver',
   'set.title': 'Ayarlar',
   'set.collection': 'Koleksiyon',
   'set.name': 'Site adı',

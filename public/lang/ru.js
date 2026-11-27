@@ -100,6 +100,7 @@ export default {
   'setup.back': 'Назад',
   'setup.finish': 'Создать аккаунт',
   'setup.skip': 'Все платформы необязательны: заполните те, которыми пользуетесь, а остальные добавьте позже в настройках.',
+  'upd.available': 'Доступна версия Playroom {v}.', 'upd.notes': 'Что нового', 'upd.how': 'Обновить командой', 'upd.hide': 'Скрыть', 'about.title': 'О Playroom', 'about.version': 'Версия {v}', 'about.upToDate': 'У вас последняя версия.', 'about.newer': 'Доступна версия {v}.', 'about.off': 'Проверка обновлений отключена (UPDATE_CHECK=false).', 'about.unknown': 'Ещё не проверялось.', 'about.nillume': 'Playroom — проект Nillume. С бесплатной учётной записью на nillume.com вы получаете письмо о каждой новой версии и можете голосовать за следующие функции.', 'about.join': 'Узнавать о новых версиях', 'about.ideas': 'Предложить функцию или проголосовать',
   'set.title': 'Настройки',
   'set.collection': 'Коллекция',
   'set.name': 'Название сайта',

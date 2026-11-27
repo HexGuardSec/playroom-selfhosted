@@ -1133,11 +1133,51 @@ function chrome() {
   for (const [p, i] of Object.entries(lib.platforms || {})) {
     if (i.enabled && i.ok === false) notes.push(`<div class="notice">${esc(t('platFail', { p: PLATFORMS[p]?.label || p }))} ${esc(i.error)}</div>`);
   }
+  const upd = updateNotice();
+  if (upd) notes.push(upd);
   $('#notices').innerHTML = notes.join('');
+  $('#updHide')?.addEventListener('click', () => {
+    try {
+      localStorage.setItem('playroom.updateHidden', state.me.update.latest);
+    } catch {}
+    $('#updNotice')?.remove();
+  });
   $('#footer').textContent = t('footer', { ago: ago(lib.generatedAt), date: date(lib.generatedAt) });
   $('#syncBtn').hidden = !isOwner();
   renderAccount();
   renderLivePill();
+}
+
+// ---------- New version and Nillume ----------
+// Links to nillume.com carry ?ref=playroom so the site can count visits coming from Playroom (no other data).
+const nillume = (page) => {
+  const fr = getLang() === 'fr';
+  const paths = { register: fr ? '/fr/inscription' : '/register', ideas: fr ? '/fr/idees' : '/ideas' };
+  return `https://nillume.com${paths[page]}?ref=playroom`;
+};
+
+function updateNotice() {
+  const u = state.me?.update;
+  if (!isOwner() || !u?.available) return '';
+  try {
+    if (localStorage.getItem('playroom.updateHidden') === u.latest) return '';
+  } catch {}
+  return `<div class="notice info upd" id="updNotice"><strong>${esc(t('upd.available', { v: u.latest }))}</strong>
+    <a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(t('upd.notes'))}</a>
+    <span>${esc(t('upd.how'))} <code>docker compose pull &amp;&amp; docker compose up -d</code></span>
+    <button class="linkish" type="button" id="updHide">${esc(t('upd.hide'))}</button></div>`;
+}
+
+function aboutPanel() {
+  const u = state.me?.update || {};
+  const status = !u.enabled ? t('about.off') : u.available ? t('about.newer', { v: u.latest }) : u.latest ? t('about.upToDate') : t('about.unknown');
+  return `<section class="panel set-block about">
+    <h2>${t('about.title')}</h2>
+    <p><strong>${esc(t('about.version', { v: u.current || '' }))}</strong> · ${u.available ? `<a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(status)}</a>` : esc(status)}</p>
+    <p class="muted">${esc(t('about.nillume'))}</p>
+    <div class="reel-actions"><a class="btn" href="${nillume('register')}" target="_blank" rel="noopener">${esc(t('about.join'))}</a>
+      <a class="btn ghost" href="${nillume('ideas')}" target="_blank" rel="noopener">${esc(t('about.ideas'))}</a></div>
+  </section>`;
 }
 
 function renderPage() {
@@ -1415,6 +1455,7 @@ async function renderSettings() {
         <p class="form-error" hidden></p><p class="form-ok" hidden></p>
         <div class="reel-actions"><button class="btn ghost" type="submit">${t('set.changePass')}</button></div>
       </form>
+      ${aboutPanel()}
       <div class="reel-actions"><button class="btn ghost danger" id="signOut">${t('acc.signOut')}</button></div>
     </div>`;
 

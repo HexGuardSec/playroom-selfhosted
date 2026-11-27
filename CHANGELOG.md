@@ -2,6 +2,12 @@
 
 All notable changes to Playroom are listed here. Versions follow [Semantic Versioning](https://semver.org/).
 
+## [2.0.3] - 2026-11-28
+
+### Added
+- **New version notice.** Once a day, Playroom asks GitHub whether a newer release exists and shows a notice to the signed-in owner, with a link to the release notes and the update command. Visitors never see it. The request carries no data about you or your collection; turn it off with `UPDATE_CHECK=false`. Never active in demo mode.
+- **Settings › About Playroom**: current version, update status, and links to nillume.com to get an email for each new version and to suggest or vote for features.
+
 ## [2.0.2] - 2026-11-20
 
 ### Privacy

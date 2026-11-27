@@ -100,6 +100,7 @@ export default {
   'setup.back': '上一步',
   'setup.finish': '建立帳號',
   'setup.skip': '所有平台都是選填：只填你用的，其餘可以之後在「設定」中新增。',
+  'upd.available': 'Playroom {v} 已推出。', 'upd.notes': '查看新功能', 'upd.how': '更新指令', 'upd.hide': '隱藏', 'about.title': '關於 Playroom', 'about.version': '版本 {v}', 'about.upToDate': '已是最新版本。', 'about.newer': '版本 {v} 已推出。', 'about.off': '已關閉更新檢查（UPDATE_CHECK=false）。', 'about.unknown': '尚未檢查。', 'about.nillume': 'Playroom 是 Nillume 的專案。在 nillume.com 註冊免費帳號後，每次推出新版本都會收到電子郵件，還能為接下來的功能投票。', 'about.join': '接收新版本通知', 'about.ideas': '提議或投票新功能',
   'set.title': '設定',
   'set.collection': '收藏',
   'set.name': '網站名稱',

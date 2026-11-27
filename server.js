@@ -14,6 +14,7 @@ import { readHistory, activityPayload } from './src/history.js';
 import { readNotes, saveNote, splitHidden, validGameId } from './src/notes.js';
 import { getPresence, pollPresence, setPresence } from './src/presence.js';
 import { demoNotes, demoPresence } from './src/demo.js';
+import { startUpdateCheck, updateInfo } from './src/updates.js';
 
 const PUBLIC = path.join(ROOT, 'public');
 const TYPES = {
@@ -252,7 +253,8 @@ async function handle(req, res) {
       const setup = !config.demo && !auth.hasAccount();
       // During setup: which keys the .env file already provides (booleans only)
       const configured = setup ? Object.fromEntries(Object.entries(publicSettings()).filter(([, v]) => v?.set !== undefined).map(([k, v]) => [k, v.set])) : undefined;
-      return json(res, 200, { setup, user, demo: config.demo, visibility: config.visibility, configured });
+      // Version and update status: owner only
+      return json(res, 200, { setup, user, demo: config.demo, visibility: config.visibility, configured, update: user ? updateInfo() : undefined });
     }
     if (m === 'POST' && (pathname === '/api/setup' || pathname === '/api/login')) {
       const ip = clientIp(req);
@@ -439,6 +441,7 @@ if (config.demo) {
   firstSync.then(tick);
   setInterval(tick, Math.max(30, config.presenceIntervalSec) * 1000).unref();
 }
+startUpdateCheck();
 if (config.syncIntervalHours > 0) {
   setInterval(() => runSync().catch((e) => log('sync', e.message)), config.syncIntervalHours * 3600_000).unref();
 }
